@@ -1,2 +1,2 @@
 #!/bin/bash
-find -mindepht . | wc -l
+find -mindepht 1 -type d . | wc -l
