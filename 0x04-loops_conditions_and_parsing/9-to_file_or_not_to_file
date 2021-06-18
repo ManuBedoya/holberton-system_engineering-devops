@@ -11,12 +11,7 @@ then
   else
     echo 'holbertonschool file is empty'
   fi
-  if [ -d "$FILE"]
-  then
-    :
-  else
-    echo 'holbertonschool file is a regular file'
-  fi
+  echo 'holbertonschool file is a regular file'
 else
   echo 'holbertonschool file does not exist'
 fi
