@@ -8,10 +8,10 @@ do
   echo $minutes
   if [ $minutes -eq 59 ]
   then
-    hour=$(( $hour + 1 ))
+    hour=$(( hour + 1 ))
     echo Hour: $hour
     minutes=1
   else
-    minutes=$(( $minutes + 1 ))
+    minutes=$(( minutes + 1 ))
   fi
 done

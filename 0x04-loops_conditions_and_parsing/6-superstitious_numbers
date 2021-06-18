@@ -10,5 +10,5 @@ do
     9) echo 'bad luck from Japan';;
     17) echo 'bad luck from Italy';;
   esac
- x=$(( $x + 1 ))
+ x=$(( x + 1 ))
 done
