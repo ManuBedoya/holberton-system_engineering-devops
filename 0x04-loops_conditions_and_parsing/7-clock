@@ -9,10 +9,7 @@ do
   if [ $minutes -eq 59 ]
   then
     hour=$(( hour + 1 ))
-    if [ $hour != 13]
-    then
-      echo Hour: $hour
-    fi
+    echo Hour: $hour
     minutes=1
   else
     minutes=$(( minutes + 1 ))
