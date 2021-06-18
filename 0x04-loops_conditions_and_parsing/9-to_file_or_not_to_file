@@ -7,22 +7,16 @@ then
   echo 'holbertonschool file exists'
   if [ -s "$FILE" ]
   then
-    echo 'holbertonschool is not empty'
+    echo 'holbertonschool file is not empty'
   else
-    echo 'holbertonschool is empty'
+    echo 'holbertonschool file is empty'
   fi
-  echo 'holbertonschool file is a regular file'
-else
-  if [ -d "$FILE" ]
+  if [ -d "$FILE"]
   then
-    echo 'holbertonschool file exists'
-    if [ -s "$FILE" ]
-    then
-      echo 'holbertonschool is not empty'
-    else
-      echo 'holbertonschool is empty'
-    fi
+    :
   else
-    echo 'holbertonschool file does not exist'
+    echo 'holbertonschool file is a regular file'
   fi
+else
+  echo 'holbertonschool file does not exist'
 fi
