@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script to display the content of the directory
+for name_file in "$search_dir"*
+do
+  echo $name_file | cut -d "-" -f 2
+done

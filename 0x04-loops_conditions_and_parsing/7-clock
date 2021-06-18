@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Script to print the hours
+hour=0
+minutes=1
+echo 'Hour: 0'
+while [ $hour -le 11 ]
+do
+  echo $minutes
+  if [ $minutes -eq 59 ]
+  then
+    hour=$(( $hour + 1 ))
+    echo Hour: $hour
+    minutes=1
+  else
+    minutes=$(( $minutes + 1 ))
+  fi
+done
