@@ -2,7 +2,6 @@
 # Script to give you information
 FILE=holbertonschool
 
-
 if [ -f "$FILE" ]
 then
   echo 'holbertonschool file exists'
@@ -12,10 +11,12 @@ then
   else
     echo 'holbertonschool is empty'
   fi
-  if [ -f "$FILE" ]
-  then
-    echo 'holbertonschool file is a regular file'
-  fi
+  echo 'holbertonschool file is a regular file'
 else
-  echo 'holbertonschool file does not exist'
+  if [ -d "$FILE" ]
+  then
+    :
+  else
+    echo 'holbertonschool file does not exist'
+  fi
 fi
