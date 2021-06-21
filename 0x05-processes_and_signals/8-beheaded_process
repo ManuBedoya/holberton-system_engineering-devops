@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Script to kill a process
 x=$(ps -e | pgrep 'bash' | tail -3 | head -1)
-kill -KILL $x
+kill -KILL "$x"
