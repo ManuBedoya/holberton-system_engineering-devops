@@ -2,6 +2,8 @@
 # Scrip to display messages when is tried to stop the program
 status=1
 
+touch /var/run/holbertonscript.pid
+
 _term()
 {
   echo 'I hate the kill command'
