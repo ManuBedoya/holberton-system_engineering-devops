@@ -7,7 +7,7 @@ _term()
 
 trap _term SIGTERM
 
-while [ 1 ]
+while "true"
 do
   echo 'To infinity and beyond'
   sleep 2
