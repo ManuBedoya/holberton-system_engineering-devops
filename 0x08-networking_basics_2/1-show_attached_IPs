@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Show ip4 address
+
+awk '!/^(f|F|:|#)/' /etc/hosts | cut -d "	" -f1
