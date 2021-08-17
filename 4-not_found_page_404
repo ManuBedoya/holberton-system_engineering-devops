@@ -16,3 +16,4 @@ if [[ -z $REDIRECT_ME ]]; then
     COMMAND='\\n\terror_page 404 /404.html;'
     sed -i "42i $COMMAND" /etc/nginx/sites-available/default
 fi
+service nginx start
