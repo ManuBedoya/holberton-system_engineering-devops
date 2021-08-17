@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Install nginx and configuration
+sudo apt-get update && sudo apt-get -y install nginx
+
+echo "Holberton School" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+REDIRECT_ME=$(grep "redirect_me" /etc/nginx/sites-available/default)
+if [[ -z $REDIRECT_ME ]]; then
+COMMAND="\\\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
+sed -i "48i $COMMAND" /etc/nginx/sites-available/default
+fi
+
+REDIRECT_ME=$(grep "error_page 404" /etc/nginx/sites-available/default)
+if [[ -z $REDIRECT_ME ]]; then
+    COMMAND='\\n\terror_page 404 /404.html;'
+    sed -i "42i $COMMAND" /etc/nginx/sites-available/default
+fi
