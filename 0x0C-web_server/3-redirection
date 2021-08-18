@@ -2,7 +2,7 @@
 # redirect me.
 apt-get update && apt-get install nginx -y
 
-echo "Holberton School" > /var/www/html/index.html
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
 
 REDIRECT_ME=$(grep "redirect_me" /etc/nginx/sites-available/default)
 if [[ -z $REDIRECT_ME ]]; then

@@ -2,7 +2,7 @@
 # NO FOUND THE PAGE 404
 apt-get update && apt-get install nginx -y
 
-echo "Holberton School" > /var/www/html/index.html
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 GREP_RES=$(grep "redirect_me" /etc/nginx/sites-available/default)
