@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script to install and configure nginx
-sudo apt-get -y update && sudo apt-get -y install nginx
-echo 'Holberton School' > /var/www/html/index.nginx-debian.html
+# Installs nginx and configuration.
+apt-get update && apt-get install nginx -y
+echo "Holberton School" > /var/www/html/index.html
 service nginx start
