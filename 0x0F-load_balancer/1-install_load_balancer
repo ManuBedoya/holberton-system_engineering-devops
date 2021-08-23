@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Script to configure HAproxy
+apt-get update && apt-get install haproxy=1.16.\* -y
+
+# Sets the content of the haproxy.cfg
+echo '
+ frontend manuelbedoya.tech
+ 	  bind 0:80
+	  default_backend web_servers
+backend web_servers
+	balance roundrobin
+		server server-01 34.73.252.190:80
+		server server-02 54.198.140.74:80
+' >> /etc/haproxy/haproxy.cfg
+
+service haproxy restart
