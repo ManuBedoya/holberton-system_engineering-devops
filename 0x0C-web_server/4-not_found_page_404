@@ -5,16 +5,12 @@ apt-get update && apt-get install nginx -y
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
-GREP_RES=$(grep "redirect_me" /etc/nginx/sites-available/default)
-if [[ -z $GREP_RES ]]; then
-    IN_STRING="\\\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
-    sed -i "48i $IN_STRING" /etc/nginx/sites-available/default
-fi
+found="server_name _;"
+adding="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com;\n\t}"
+sed -i "/$found/a\\$adding"
 
-GREP_RES=$(grep "error_page 404" /etc/nginx/sites-available/default)
-if [[ -z $GREP_RES ]]; then
-    IN_STRING='\\n\terror_page 404 /404.html;'
-    sed -i "42i $IN_STRING" /etc/nginx/sites-available/default
-fi
 
-service nginx start
+adding="\n\terror_page 404 /404.html;"
+sed -i "/$found/a\\$adding"
+
+service nginx restart
