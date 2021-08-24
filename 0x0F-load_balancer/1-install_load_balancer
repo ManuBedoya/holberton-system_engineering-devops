@@ -3,7 +3,7 @@
 apt-get update && apt-get -y install haproxy=1.16.\*
 
 echo '
-frontend manuelbedoya.tech
+frontend 52.87.176.52
 	 bind 0:80
          default_backend web_servers
 
