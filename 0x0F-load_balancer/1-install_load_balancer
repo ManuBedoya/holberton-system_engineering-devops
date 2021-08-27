@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Script to install HAProxy
+apt-get update
+apt-get install -y haproxy=1.6.\*
+echo "
+frontend 52.87.176.5
+    bind 0:80
+    default_backend web_servers
+backend web_servers
+    balance roundrobin
+    server web-01 34.73.252.190:80
+    server web-02 54.198.140.74:80" >> /etc/haproxy/haproxy.cfg
+/etc/init.d/haproxy start
