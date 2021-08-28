@@ -10,13 +10,13 @@ if [ "$2" ]
 then
   record=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}')
   destination=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}')
-  print ${2} ${record} ${destination}
+  print "${2}" "${record}" "${destination}"
 else
   subdomains=("www" "lb-01" "web-01" "web-02")
   for ((i=0;i<${#subdomains[@]};++i));
   do
     record=$(dig "${subdomains[i]}"."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}')
     destination=$(dig "${subdomains[i]}"."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}')
-    print ${subdomains[i]} ${record} ${destination}
+    print "${subdomains[i]}" "${record}" "${destination}"
   done
 fi
