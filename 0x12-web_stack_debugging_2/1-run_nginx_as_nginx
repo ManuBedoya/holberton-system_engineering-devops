@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script to execute nginx with root nginx
-chown -R nginx:nginx /etc/nginx
-sed -i "s/80/8080" /etc/nginx/sites-available/default
+chown -R nginx:nginx /etc/nginx/
+sed -i "s/80/8080/" /etc/nginx/sites-available/default
 chmod 700 /etc/nginx/nginx.conf
 pkill -f apache2
-su -u nginx service nginx start
+sudo -u nginx service nginx start
