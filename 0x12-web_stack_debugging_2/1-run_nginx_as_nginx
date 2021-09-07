@@ -3,4 +3,5 @@
 chown -R nginx:nginx /etc/nginx
 sed -i "s/80/8080" /etc/nginx/sites-available/default
 chmod 700 /etc/nginx/nginx.conf
+pkill -f apache2
 su -u nginx service nginx start
