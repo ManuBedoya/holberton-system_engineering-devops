@@ -15,7 +15,7 @@ if __name__ == '__main__':
     task_dict[sys.argv[1]] = []
 
     for task in todo:
-        if task['userId'] == int(av[1]):
+        if task['userId'] == int(sys.argv[1]):
             tmp_dict = {}
             tmp_dict['task'] = task['title']
             tmp_dict['completed'] = task['completed']
