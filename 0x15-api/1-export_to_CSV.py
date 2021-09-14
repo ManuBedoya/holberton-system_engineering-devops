@@ -3,11 +3,11 @@
 """
 if __name__ == '__main__':
     import csv
-    import sys
+    from sys import argv
     import requests
 
     if len(sys.argv) == 2:
-        url = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
+        url = "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])
         res = requests.get(url)
         name = res.json()['username']
         todo = requests.get("https://jsonplaceholder.typicode.com/todos")
