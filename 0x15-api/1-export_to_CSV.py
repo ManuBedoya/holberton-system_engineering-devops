@@ -14,7 +14,6 @@ if __name__ == '__main__':
         csv_writer = csv.writer(csv_file, delimiter=",", quotechar='"',
                                 quoting=csv.QUOTE_MINIMAL)
 
-
         for item in todo.json():
             if item['userId'] == int(sys.argv[1]):
                 csv_writer.writerow([sys.argv[1], name, item['completed'],

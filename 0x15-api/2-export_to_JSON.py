@@ -22,5 +22,5 @@ if __name__ == '__main__':
             tmp_dict['username'] = name
             task_dict[sys.argv[1]].append(tmp_dict)
 
-    with open('{}.json'.format(av[1]), 'w') as F:
+    with open('{}.json'.format(sys.argv[1]), 'w') as F:
         dump(task_dict, F)

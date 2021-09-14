@@ -3,11 +3,10 @@
 """
 if __name__ == '__main__':
     import requests
-    import sys
+    from sys import argv
 
-    
-    if len(sys.argv) == 2:
-        url = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
+    if len(argv) == 2:
+        url = "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])
         response = requests.get(url)
         txt_json = response.json()
         count_total = 0
@@ -17,8 +16,8 @@ if __name__ == '__main__':
         extra = ""
 
         for item in todo.json():
-            if item['userId'] == int(sys.argv[1]):
-                if item['completed'] == True:
+            if item['userId'] == int(argv[1]):
+                if item['completed']:
                     count_complete += 1
                     extra += "\n\t {}".format(item['title'])
                 count_total += 1
