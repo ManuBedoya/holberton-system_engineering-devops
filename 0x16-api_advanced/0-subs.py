@@ -12,9 +12,9 @@ def number_of_subscribers(subreddit):
         url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
 
         response = requests.get(url, headers=user_ag)
-        data = response.json()
-        try:
+
+        if response.status_code == 200:
+            data = response.json()
             return data['data']['subscribers']
-        except KeyError:
+        else:
             return 0
-    return 0
