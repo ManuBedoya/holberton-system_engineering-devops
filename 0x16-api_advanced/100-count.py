@@ -11,9 +11,9 @@ def count_words(subreddit, word_list):
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
 
     if after is None:
-        return hot_list
+        return word_list
 
-    params = {'limit': 100, 'after': after}
+    params = {'limit': 100, 'count': count}
     response = requests.get(url, params=params, headers=headers,
                             allow_redirects=False)
 
@@ -26,7 +26,7 @@ def count_words(subreddit, word_list):
         after = catch.get('after')
 
         for item in data.get('children'):
-            hot_list.append(item.get('data').get('title'))
+            word_list.append(item.get('data').get('title'))
     except:
         return None
-    return recurse(subreddit, hot_list, after)
+    return recurse(subreddit, word_list)
