@@ -3,10 +3,11 @@ import requests
 import user_agent
 import sys
 
+
 def top_ten(subreddit):
     if (len(sys.argv) == 2):
         user_ag = {'User-Agent': user_agent.generate_user_agent()}
-        url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(sys.argv[1])
+        url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
 
         response = requests.get(url, headers=user_ag)
         data = response.json()
