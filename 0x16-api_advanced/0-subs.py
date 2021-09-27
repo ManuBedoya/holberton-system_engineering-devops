@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-""" Module for storing the number_of_subscribers function. """
-from requests import get
+""" Module for api reddit """
+import requests
 
 
 def number_of_subscribers(subreddit):
-    """ Returns the number of subscribers on a given subbreddit. """
+    """ get the  number of suscribers """
 
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    headers = {'User-Agent': 'HolbertonSchool'}
+    headers = {'User-Agent': 'Holberton'}
 
-    r = get(url, headers=headers, allow_redirects=False)
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
-    if r.status_code == 200:
-        return r.json()['data']['subscribers']
+    if response.status_code == 200:
+        return response.json()['data']['subscribers']
     else:
         return 0
